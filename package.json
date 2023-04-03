@@ -1,0 +1,75 @@
+{
+  "name": "redegal-podcast",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "yarn env:dev && webpack serve --progress --mode development --config ./webpack/webpack.config.js",
+    "clean": "rm -rf ./dist",
+    "test": "jest -u -c ./jest/jest.config.js",
+    "env:dev": "cp .env.dev .env",
+    "env:prod": "cp .env.prod .env",
+    "build:dev": "yarn env:dev && yarn clean && webpack --progress --mode development --config ./webpack/webpack.config.js",
+    "build:prod": "yarn env:pord && yarn clean && webpack --progress --mode production --config ./webpack/webpack.config.js"
+  },
+  "dependencies": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-helmet-async": "1.0.9",
+    "react-router-dom": "5.2.0",
+    "styled-components": "5.2.1",
+    "typescript": "4.2.3",
+    "dotenv": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@testing-library/jest-dom": "5.11.9",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "12.8.1",
+    "@types/enzyme": "^3.1.15",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/axios": "0.14.0",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.1",
+    "@types/react-router-dom": "5.1.7",
+    "@types/styled-components": "5.1.7",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.10",
+    "babel-loader": "^8.2.5",
+    "babel-jest": "^24.1.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "webpack": "5.74.0",
+    "ts-loader": "^9.4.1",
+    "jest-dom": "^4.0.0",
+    "jest": "^27.3.1",
+    "prettier": "^2.5.0",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "enzyme-to-json": "^3.3.4",
+    "@svgr/webpack": "^6.3.1",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "4.11.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
